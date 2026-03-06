@@ -1,4 +1,4 @@
-package Util;
+package com.ottdog.inflationCalculator.Util;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

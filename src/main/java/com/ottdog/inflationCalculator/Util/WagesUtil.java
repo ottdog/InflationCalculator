@@ -1,4 +1,4 @@
-package Util;
+package com.ottdog.inflationCalculator.Util;
 
 public class WagesUtil {
     private static final Integer STANDARD_WORK_WEEK = 40;

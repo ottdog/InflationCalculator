@@ -1,9 +1,8 @@
-package Data;
+package com.ottdog.inflationCalculator.Data;
 
-import Util.DateLabelUtil;
+import com.ottdog.inflationCalculator.Util.DateLabelUtil;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
@@ -12,10 +11,21 @@ import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Data
-@Setter
-@Getter
+@NoArgsConstructor
 public class MonetaryData {
     HashMap<String, Double> data = new HashMap<>();
+
+    /**
+     * Constructor from request structure to fill out a user's nominal income data
+     * @param request request from front end
+     */
+    public MonetaryData(InflationDataRequest request) {
+        request.getData().forEach(datapoint -> {
+            this.addDataPoint(datapoint.getLabel(), datapoint.getValue());
+        });
+        this.fillInDataGaps();
+
+    }
 
     /**
      * Wrapper class for Map.get()

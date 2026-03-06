@@ -1,5 +1,6 @@
-import Data.MonetaryData;
-import Util.DateLabelUtil;
+package com.ottdog.inflationCalculator;
+
+import com.ottdog.inflationCalculator.Data.MonetaryData;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtils;
 import org.jfree.chart.JFreeChart;
@@ -7,6 +8,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 import java.io.File;
 import java.io.IOException;
+
 
 public class testMain {
     public static void main(String[] args){
